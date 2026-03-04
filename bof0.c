@@ -1,5 +1,4 @@
 #define _GNU_SOURCE
-#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -17,7 +16,7 @@ void print(char * message) {
 
 int main(int argc, char ** argv) {
     // Set UID to 0 (root) - more on that later
-    assert(setresuid(0, 0, 0) == 0);
+    setresuid(0, 0, 0);
     if (argc != 2) {
         printf("Usage: %s <name>\n", argv[0]);
         return 1;
